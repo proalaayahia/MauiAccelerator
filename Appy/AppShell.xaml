@@ -6,8 +6,13 @@
 	xmlns:views="clr-namespace:Appy.Views"
 	xmlns:local="clr-namespace:Appy">
 
+        <Shell.FlyoutFooter>
+            <StackLayout Padding="20">
+                <Button Text="Sign Out" BackgroundColor="#333" TextColor="#fff" Command="{Binding SignOutCommand}" />
+            </StackLayout>
+        </Shell.FlyoutFooter>
 	<TabBar>
-		<ShellContent
+        <ShellContent
 			Title="Main"
 			Icon="iconblank.png"
             Route="MainPage"

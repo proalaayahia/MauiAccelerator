@@ -19,10 +19,16 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+        //connectivity service resolving 
+        builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
 
-		builder.Services.AddSingleton<MainViewModel>();
+        builder.Services.AddSingleton<MainViewModel>();
 
 		builder.Services.AddSingleton<MainPage>();
+
+		builder.Services.AddSingleton<LoginPageViewModel>();
+
+		builder.Services.AddSingleton<LoginPage>();
 
 		builder.Services.AddSingleton<WebViewViewModel>();
 

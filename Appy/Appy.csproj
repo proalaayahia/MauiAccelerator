@@ -46,6 +46,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\login_logo.png" />
 	  <None Remove="Resources\Images\qrcode.svg" />
 	</ItemGroup>
 
@@ -54,6 +55,7 @@
 	  <PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
 	  <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.1" />
 	  <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,6 +83,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ScanPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

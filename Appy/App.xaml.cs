@@ -1,14 +1,27 @@
-﻿namespace Appy;
+﻿using Appy.Handlers;
+using Appy.Models;
+using Microsoft.Maui.Platform;
+
+namespace Appy;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
-
-		// Uncomment the following as a quick way to test loading resources for different languages
-		// CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = new CultureInfo("es");
-
-		MainPage = new AppShell();
-	}
+    public static UserBasicInfo UserDetails;
+    public App()
+    {
+        InitializeComponent();
+        //Border less entry
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(BorderlessEntry), (handler, view) =>
+        {
+            if (view is BorderlessEntry)
+            {
+#if __ANDROID__
+                handler.PlatformView.SetBackgroundColor(Colors.Transparent.ToPlatform());
+#elif __IOS__
+                handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+#endif
+            }
+        });
+        MainPage = new AppShell();
+    }
 }
