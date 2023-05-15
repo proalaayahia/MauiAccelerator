@@ -31,8 +31,11 @@ public partial class ScanPage : ContentPage
         {
             result = await Task.FromResult($"{args.Result[0].Text}");
         });
-        WeakReferenceMessenger.Default.Send(new MyMessage("Hello World"));
         await DisplayAlert("", $"Result: {result}","Ok");
     }
 
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        WeakReferenceMessenger.Default.Send(new MyMessage("https://facebook.com"));
+    }
 }

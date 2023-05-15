@@ -8,8 +8,9 @@
         <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <cv:CameraView x:Name="cameraView" CamerasLoaded="cameraView_CamerasLoaded" BarCodeDetectionEnabled="True"
                            BarcodeDetected="cameraView_BarcodeDetected"  />
-            <Switch WidthRequest="300" IsVisible="false"  x:Name="FlashlightSwitch" Toggled="FlashlightSwitch_Toggled" BackgroundColor="#77258b" ThumbColor="#fff">
-            </Switch>
+            <!--<Switch WidthRequest="300" IsVisible="false"  x:Name="FlashlightSwitch" Toggled="FlashlightSwitch_Toggled" BackgroundColor="#77258b" ThumbColor="#fff">
+            </Switch>-->
+            <Button Clicked="Button_Clicked" Text="Test Messaging"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

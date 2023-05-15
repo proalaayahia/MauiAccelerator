@@ -62,6 +62,7 @@ public partial class WebViewViewModel : BaseViewModel,IRecipient<MyMessage>
 
     public void Receive(MyMessage message)
     {
+		Source = message.Value;
         Shell.Current.DisplayAlert("Message received", message.Value, "OK");
     }
 }
