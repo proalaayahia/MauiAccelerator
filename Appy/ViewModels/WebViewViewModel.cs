@@ -1,6 +1,8 @@
-﻿namespace Appy.ViewModels;
+﻿using CommunityToolkit.Mvvm.Messaging;
 
-public partial class WebViewViewModel : BaseViewModel
+namespace Appy.ViewModels;
+
+public partial class WebViewViewModel : BaseViewModel,IRecipient<MyMessage>
 {
 	[ObservableProperty]
 	public string source;
@@ -13,9 +15,10 @@ public partial class WebViewViewModel : BaseViewModel
 		// TODO: Update the default URL
 		Source = "https://github.com/sponsors/mrlacey";
 		IsLoading = true;
-	}
+        WeakReferenceMessenger.Default.Register(this);
+    }
 
-	[RelayCommand]
+    [RelayCommand]
 	private async void WebViewNavigated(WebNavigatedEventArgs e)
 	{
 		IsLoading = false;
@@ -56,4 +59,9 @@ public partial class WebViewViewModel : BaseViewModel
 	{
 		await Launcher.OpenAsync(Source);
 	}
+
+    public void Receive(MyMessage message)
+    {
+        Shell.Current.DisplayAlert("Message received", message.Value, "OK");
+    }
 }

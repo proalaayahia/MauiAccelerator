@@ -1,4 +1,6 @@
-﻿namespace Appy;
+﻿using Camera.MAUI;
+
+namespace Appy;
 
 public static class MauiProgram
 {
@@ -7,8 +9,9 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.UseMauiCommunityToolkit()
-			.ConfigureFonts(fonts =>
+            .UseMauiCommunityToolkit()
+            .UseMauiCameraView()
+            .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("FontAwesome6FreeBrands.otf", "FontAwesomeBrands");
 				fonts.AddFont("FontAwesome6FreeRegular.otf", "FontAwesomeRegular");

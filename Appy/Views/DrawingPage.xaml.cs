@@ -2,7 +2,7 @@
 
 namespace Appy.Views;
 
-public partial class DrawingPage : AnimatedPage
+public partial class DrawingPage : ContentPage
 {
 	public DrawingPage(DrawingViewModel viewModel)
 	{
@@ -22,8 +22,4 @@ public partial class DrawingPage : AnimatedPage
 
 		GeneratedImage.Source = ImageSource.FromStream(() => stream);
 	}
-    private async void Button_Clicked(object sender, EventArgs e)
-    {
-       await base.AnimatedGoTo(nameof(WebViewPage));
-    }
 }

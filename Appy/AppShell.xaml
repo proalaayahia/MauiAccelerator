@@ -17,6 +17,11 @@
 			Icon="iconwebview.png"
             Route="WebViewPage"
 			ContentTemplate="{DataTemplate views:WebViewPage}" />
+        <ShellContent
+			Title="Scanning"
+			Icon="qrcode.png"
+            Route="ScanPage"
+			ContentTemplate="{DataTemplate views:ScanPage}" />
 		<ShellContent
 			Title="Drawing"
 			Icon="icondrawing.png"
